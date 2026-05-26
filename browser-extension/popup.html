@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediaSnap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { width: 320px; font-family: 'Segoe UI', system-ui, sans-serif; background: #0f1117; color: #e8eaf0; padding: 0; }
+    .header { background: linear-gradient(135deg, #6c63ff 0%, #5a52e0 100%); padding: 14px 16px 12px; display: flex; align-items: center; gap: 10px; }
+    .logo { font-size: 1.5rem; }
+    .header-text h1 { font-size: 1rem; font-weight: 700; color: #fff; }
+    .header-text p { font-size: 0.72rem; color: rgba(255,255,255,0.75); margin-top: 1px; }
+    .body { padding: 14px 16px 12px; }
+    .url-box { background: #1a1d27; border: 1px solid #2e3350; border-radius: 8px; padding: 10px 12px; font-size: 0.78rem; color: #b0b4cc; word-break: break-all; min-height: 48px; line-height: 1.5; margin-bottom: 12px; }
+    .url-box .url-label { font-size: 0.65rem; color: #6b7099; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 10px; border: none; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: background 0.15s, opacity 0.15s; margin-bottom: 8px; }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .btn-primary { background: #6c63ff; color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: #5a52e0; }
+    .btn-ghost { background: #1a1d27; color: #8b90a7; border: 1px solid #2e3350; }
+    .btn-ghost:hover:not(:disabled) { background: #22263a; color: #e8eaf0; }
+    .status { font-size: 0.75rem; text-align: center; padding: 6px 10px; border-radius: 6px; margin-top: 6px; }
+    .status-success { background: rgba(76,175,125,.15); color: #6fcf97; border: 1px solid rgba(76,175,125,.3); }
+    .status-error { background: rgba(244,67,99,.12); color: #f86882; border: 1px solid rgba(244,67,99,.3); }
+    .divider { border: none; border-top: 1px solid #2e3350; margin: 10px 0; }
+    .settings-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+    .settings-label { font-size: 0.72rem; color: #6b7099; flex-shrink: 0; }
+    .port-input { flex: 1; background: #1a1d27; border: 1px solid #2e3350; border-radius: 6px; padding: 5px 8px; font-size: 0.78rem; color: #e8eaf0; outline: none; }
+    .port-input:focus { border-color: #6c63ff; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">⬇</span>
+    <div class="header-text"><h1>MediaSnap</h1><p>One-click video downloader</p></div>
+  </div>
+  <div class="body">
+    <div class="url-box">
+      <div class="url-label">Current page</div>
+      <div id="currentUrl">Loading...</div>
+    </div>
+    <button class="btn btn-primary" id="sendBtn" disabled>⬇ Send to MediaSnap</button>
+    <button class="btn btn-ghost" id="openAppBtn">🌐 Open MediaSnap</button>
+    <div id="status" class="status" style="display:none"></div>
+    <hr class="divider" />
+    <div class="settings-row">
+      <span class="settings-label">Port</span>
+      <input class="port-input" id="portInput" type="number" min="1" max="65535" placeholder="5173" />
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
