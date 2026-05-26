@@ -1,0 +1,34 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/downloads/
+backend/settings.json
+backend/history.json
+backend/cookies.txt
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+node_modules/
+
+# Data / runtime
+data/
+downloads/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Archives
+mediasnap.tar.gz
