@@ -44,6 +44,7 @@ _YT_BYPASS = {
             "player_client": ["tv_embedded", "web"],
         }
     },
+    "format": "bestvideo*+bestaudio*/best",
     "http_headers": {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
